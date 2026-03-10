@@ -1,0 +1,257 @@
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #0d0d0d;
+    --bg1-color: #1a1a1a80;
+    --hdbg-color: #0d0d0d80;
+    --terminal-green: #00ff41;
+    --terminal-dim: #008f11;
+    --text-color: #e0e0e0;
+    --terminal-amber: #FF9F1C;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(to top, #0d0d0d, #0d0d0d, #0d0d0d, #008f11);
+    background-size: cover;
+    background-size: 100% 2px;
+    color: var(--text-color);
+    font-family: 'Liberation Mono', 'Courier New', Courier, monospace;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: var(--hdbg-color);
+    border-bottom: 2px solid var(--terminal-green);
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.prompt {
+    color: var(--terminal-green);
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    white-space: nowrap;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+nav {
+    display: flex;
+    gap: clamp(15px, 3vw, 40px);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-link {
+    color: var(--terminal-green);
+    text-decoration: none;
+    transition: color 0.3s;
+    white-space: nowrap;
+    font-size: clamp(0.8rem, 1.3vw, 1.2rem);
+}
+
+.nav-link:hover {
+    color: var(--terminal-amber);
+}
+
+main {
+    padding-top: 110px;
+}
+
+section {
+    padding: 40px 0;
+    min-height: 80vh;
+}
+
+.section-title {
+    color: var(--terminal-amber);
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--terminal-dim);
+    padding-bottom: 10px;
+    display: inline-block;
+    -webkit-animation: glow 0.5s ease-in-out infinite alternate;
+    -moz-animation: glow 0.5s ease-in-out infinite alternate;
+    animation: glow 0.5s ease-in-out infinite alternate;
+}
+
+.code-block {
+    background-color: var(--bg1-color);
+    border: 1px solid var(--terminal-dim);
+    padding: 20px;
+    border-radius: 4px;
+    font-size: clamp(0.8rem, 1.3vw, 1.2rem);;
+}
+
+.code-block:hover {
+    border-color: var(--terminal-green);
+}
+
+.command {
+    color: var(--terminal-green);
+    margin: 10px 0;
+}
+
+.output {
+    color: var(--text-color);
+    margin: 5px 0;
+    margin-left: 4px;
+}
+
+.project {
+    background-color: var(--bg1-color);
+    border: 1px solid var(--terminal-dim);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s;
+}
+
+.project:hover {
+    border-color: var(--terminal-green);
+}
+
+.project-title {
+    color: var(--terminal-green);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.project-desc {
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.project-tech {
+    color: var(--terminal-dim);
+    font-size: 0.9rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    border: 1px solid var(--terminal-dim);
+    padding: 10px;
+    background-color: var(--bg1-color);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border: 1px solid var(--terminal-dim);
+    margin-bottom: 10px;
+    opacity: 0.6;
+}
+
+.gallery-caption {
+    color: var(--terminal-dim);
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.gallery-item:hover {
+    border-color: var(--terminal-green);
+}
+
+.gallery-item img:hover {
+    border-color: var(--terminal-amber);
+}
+
+footer {
+    background-color: var(--hdbg-color);
+    border-top: 2px solid var(--terminal-green);
+    padding: 10px 0;
+    text-align: center;
+}
+
+.footer-text {
+    color: var(--terminal-dim);
+    font-size: 0.9rem;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    background-color: var(--bg1-color);
+    border: 1px solid var(--terminal-dim);
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+.hero-image:hover {
+    border-color: var(--terminal-green);
+}
+
+/*scanlines effect*/
+@media screen{
+        body{
+        animation: scanlines infinite 50s linear ;
+    }
+}
+@keyframes scanlines {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 -10px;
+    }
+}
+
+/*text glow effect*/
+@keyframes glow {
+    from {
+        text-shadow: 0 0 1px #FF9F1C, 0 0 2px #008f11, 0 0 5px #008f11;
+    }
+    to {
+        text-shadow: 0 0 2px #FF9F1C, 0 0 5px #008f11;
+    }
+}
+
+@-webkit-keyframes glow {
+    from {
+        text-shadow: 0 0 1px #FF9F1C, 0 0 2px #008f11, 0 0 5px #008f11;
+    }
+    to {
+        text-shadow: 0 0 2px #FF9F1C, 0 0 5px #008f11;
+    }
+}
